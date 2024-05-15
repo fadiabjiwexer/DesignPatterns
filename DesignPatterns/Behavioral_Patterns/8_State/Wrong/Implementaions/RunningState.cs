@@ -4,21 +4,21 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DesignPatterns.Behavioral_Patterns.State.Wrong;
 
-namespace DesignPatterns.State.Wrong.Implementaions
+namespace DesignPatterns.Behavioral_Patterns.State.Wrong.Implementaions
 {
-    public class StoppedState : DesignPatterns.State.Wrong.Interfaces.State
+    public class RunningState : Interfaces.State
     {
         private StopWatch stopwatch;
-        public StoppedState(StopWatch stopwatch)
+        public RunningState(StopWatch stopwatch)
         {
             this.stopwatch = stopwatch;
         }
         public void Click()
         {
             stopwatch.setCurrentState(new RunningState(stopwatch));
-
-            Console.WriteLine("Stooped");
+            Console.WriteLine("Running");
         }
     }
 }

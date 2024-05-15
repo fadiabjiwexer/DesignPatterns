@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-using DesignPatterns.State.Right.Interface;
+using DesignPatterns.Behavioral_Patterns.State.Right.Interface;
 
-namespace DesignPatterns.State.Right
+namespace DesignPatterns.Behavioral_Patterns.State.Right
 {
     public class Canvas
     {

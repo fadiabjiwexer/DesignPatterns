@@ -1,6 +1,6 @@
-﻿using DesignPatterns.State.Right;
+﻿using DesignPatterns.Behavioral_Patterns.State.Wrong;
+using DesignPatterns.State.Right;
 using DesignPatterns.State.Right.Tools;
-using DesignPatterns.State.Wrong;
 using System.Diagnostics;
 
 namespace DesignPatterns

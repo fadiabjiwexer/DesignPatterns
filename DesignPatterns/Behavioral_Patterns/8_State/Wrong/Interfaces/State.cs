@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.State.Wrong.Interfaces
+namespace DesignPatterns.Behavioral_Patterns.State.Wrong.Interfaces
 {
     public interface State
     {

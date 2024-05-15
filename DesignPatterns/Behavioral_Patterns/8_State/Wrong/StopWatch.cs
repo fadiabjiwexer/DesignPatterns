@@ -1,4 +1,4 @@
-﻿using DesignPatterns.State.Wrong.Implementaions;
+﻿using DesignPatterns.Behavioral_Patterns.State.Wrong.Implementaions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.State.Wrong
+namespace DesignPatterns.Behavioral_Patterns.State.Wrong
 {
     // This Example about abusing the state patterns and make the thinks more complicated
     public class StopWatch
@@ -26,21 +26,21 @@ namespace DesignPatterns.State.Wrong
         //}
         // Developer tried to refactor this method by implement the state pattern here
 
-        private DesignPatterns.State.Wrong.Interfaces.State currentState;
+        private Interfaces.State currentState;
 
         public StopWatch()
         {
             currentState = new StoppedState(this);
         }
 
-        public DesignPatterns.State.Wrong.Interfaces.State getCurrentState()
+        public Interfaces.State getCurrentState()
         {
             return currentState;
         }
 
-        public void setCurrentState(DesignPatterns.State.Wrong.Interfaces.State state)
+        public void setCurrentState(Interfaces.State state)
         {
-            this.currentState = state;
+            currentState = state;
         }
 
 
