@@ -3,6 +3,9 @@ using DesignPatterns.Behavioral_Patterns._2_Command;
 using DesignPatterns.Behavioral_Patterns._3_Interpreter.Implementations;
 using DesignPatterns.Behavioral_Patterns._3_Interpreter.Interfaces;
 using DesignPatterns.Behavioral_Patterns._4_Iterator.Interfaces;
+using DesignPatterns.Behavioral_Patterns._5_Mediator.Colleagure;
+using DesignPatterns.Behavioral_Patterns._5_Mediator.Implementations;
+using DesignPatterns.Behavioral_Patterns._5_Mediator.Interfaces;
 using DesignPatterns.Behavioral_Patterns.State.Wrong;
 using System.Linq.Expressions;
 
@@ -69,19 +72,36 @@ namespace DesignPatterns
             //Console.WriteLine("Result: " + result);
             //Console.ReadKey();
 
-            //3_ Iterator Design pattern
+            //4_ Iterator Design pattern
             // Client code
-                MyCollection collection = new MyCollection();
-                collection.AddItem("First");
-                collection.AddItem("Second");
-                collection.AddItem("Third");
+            //MyCollection collection = new MyCollection();
+            //collection.AddItem("First");
+            //collection.AddItem("Second");
+            //collection.AddItem("Third");
 
-                IIterator iterator = collection.CreateIterator();
-                while (iterator.HasNext())
-                {
-                    string item = (string)iterator.Next();
-                    Console.WriteLine(item);
-                }
+            //IIterator iterator = collection.CreateIterator();
+            //while (iterator.HasNext())
+            //{
+            //    string item = (string)iterator.Next();
+            //    Console.WriteLine(item);
+            //}
+
+
+            //5_ Mediator Design pattern
+            // Client code
+            IChatRoomMediator chatRoom = new ChatRoom();
+
+            MedaitorUser user1 = new MedaitorUser(chatRoom, "Alice");
+            MedaitorUser user2 = new MedaitorUser(chatRoom, "Bob");
+            MedaitorUser user3 = new MedaitorUser(chatRoom, "Charlie");
+
+            chatRoom.RegisterUser(user1);
+            chatRoom.RegisterUser(user2);
+            chatRoom.RegisterUser(user3);
+
+            user1.Send("Hello, everyone!");
+            user2.Send("Hi, Alice!");
+            user3.Send("Hey there!");
         }
     }
 }

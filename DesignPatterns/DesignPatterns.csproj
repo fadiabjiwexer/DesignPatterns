@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="Behavioral_Patterns\6_Momento\" />
-    <Folder Include="Behavioral_Patterns\5_Mediator\" />
     <Folder Include="Behavioral_Patterns\7_Observer\" />
     <Folder Include="Behavioral_Patterns\9_Strategy\" />
     <Folder Include="Behavioral_Patterns\10_Template_Method\" />
