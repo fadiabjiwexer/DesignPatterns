@@ -7,6 +7,8 @@ using DesignPatterns.Behavioral_Patterns._5_Mediator.Colleagure;
 using DesignPatterns.Behavioral_Patterns._5_Mediator.Implementations;
 using DesignPatterns.Behavioral_Patterns._5_Mediator.Interfaces;
 using DesignPatterns.Behavioral_Patterns._6_Momento;
+using DesignPatterns.Behavioral_Patterns._7_Observer.Implementations;
+using DesignPatterns.Behavioral_Patterns._7_Observer.Interfaces;
 using DesignPatterns.Behavioral_Patterns.State.Wrong;
 using System.Linq.Expressions;
 
@@ -128,6 +130,24 @@ namespace DesignPatterns
             //editor.Restore(lastMemento);
 
             //editor.ShowContent();  // Output: Current Content: Hello, World!
+
+            //7 - Observer Pattern
+            //Client
+            // Create a WeatherData subject
+            WeatherData weatherData = new WeatherData();
+
+            // Create observers
+            CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay();
+            StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+
+            // Register observers
+            weatherData.RegisterObserver(currentDisplay);
+            weatherData.RegisterObserver(statisticsDisplay);
+
+            // Simulate new weather measurements
+            weatherData.SetMeasurements(80, 65, 30.4f);
+            weatherData.SetMeasurements(82, 70, 29.2f);
+            weatherData.SetMeasurements(78, 90, 29.2f);
         }
     }
 }
