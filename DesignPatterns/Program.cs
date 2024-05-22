@@ -1,6 +1,8 @@
 ﻿using DesignPatterns.Behavioral_Patterns._1_Chain_of_Responsibility;
 using DesignPatterns.Behavioral_Patterns._10_Template_Method.Abstract;
 using DesignPatterns.Behavioral_Patterns._10_Template_Method.Subclasses;
+using DesignPatterns.Behavioral_Patterns._11_Visitor.Implementations.Concrete_elements;
+using DesignPatterns.Behavioral_Patterns._11_Visitor.Implementations.Concrete_visitors;
 using DesignPatterns.Behavioral_Patterns._2_Command;
 using DesignPatterns.Behavioral_Patterns._3_Interpreter.Implementations;
 using DesignPatterns.Behavioral_Patterns._3_Interpreter.Interfaces;
@@ -177,13 +179,29 @@ namespace DesignPatterns
 
             //10 Template_Method Pattern 
 
-            Game game = new Football();
-            game.Play();
+            //Game game = new Football();
+            //game.Play();
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            game = new Cricket();
-            game.Play();
+            //game = new Cricket();
+            //game.Play();
+
+            //11- Visitor Pattern
+            // Create some shapes
+            Circle circle = new Circle(5);
+            Rectangle rectangle = new Rectangle(3, 4);
+
+            // Create visitors
+            AreaVisitor areaVisitor = new AreaVisitor();
+            DrawVisitor drawVisitor = new DrawVisitor();
+
+            // Use visitors
+            circle.Accept(areaVisitor);
+            circle.Accept(drawVisitor);
+
+            rectangle.Accept(areaVisitor);
+            rectangle.Accept(drawVisitor);
         }
     }
 }
