@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPatterns.Behavioral_Patterns._6_Momento
+namespace DesignPatterns.Behavioral_Patterns._6_Memento
 {
     public class TextEditor
     {
@@ -32,3 +32,5 @@ namespace DesignPatterns.Behavioral_Patterns._6_Momento
     }
 }
   
+
+

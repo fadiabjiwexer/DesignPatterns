@@ -6,7 +6,7 @@ using DesignPatterns.Behavioral_Patterns._4_Iterator.Interfaces;
 using DesignPatterns.Behavioral_Patterns._5_Mediator.Colleagure;
 using DesignPatterns.Behavioral_Patterns._5_Mediator.Implementations;
 using DesignPatterns.Behavioral_Patterns._5_Mediator.Interfaces;
-using DesignPatterns.Behavioral_Patterns._6_Momento;
+using DesignPatterns.Behavioral_Patterns._6_Memento;
 using DesignPatterns.Behavioral_Patterns._7_Observer.Implementations;
 using DesignPatterns.Behavioral_Patterns._7_Observer.Interfaces;
 using DesignPatterns.Behavioral_Patterns.State.Wrong;

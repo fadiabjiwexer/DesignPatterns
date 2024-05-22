@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Behavioral_Patterns._6_Momento
+﻿namespace DesignPatterns.Behavioral_Patterns._6_Memento
 {
     public class TextEditorHistory
     {
