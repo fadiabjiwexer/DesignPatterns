@@ -1,4 +1,6 @@
 ﻿using DesignPatterns.Behavioral_Patterns._1_Chain_of_Responsibility;
+using DesignPatterns.Behavioral_Patterns._10_Template_Method.Abstract;
+using DesignPatterns.Behavioral_Patterns._10_Template_Method.Subclasses;
 using DesignPatterns.Behavioral_Patterns._2_Command;
 using DesignPatterns.Behavioral_Patterns._3_Interpreter.Implementations;
 using DesignPatterns.Behavioral_Patterns._3_Interpreter.Interfaces;
@@ -9,6 +11,7 @@ using DesignPatterns.Behavioral_Patterns._5_Mediator.Interfaces;
 using DesignPatterns.Behavioral_Patterns._6_Memento;
 using DesignPatterns.Behavioral_Patterns._7_Observer.Implementations;
 using DesignPatterns.Behavioral_Patterns._7_Observer.Interfaces;
+using DesignPatterns.Behavioral_Patterns._9_Strategy;
 using DesignPatterns.Behavioral_Patterns.State.Wrong;
 using System.Linq.Expressions;
 
@@ -134,20 +137,53 @@ namespace DesignPatterns
             //7 - Observer Pattern
             //Client
             // Create a WeatherData subject
-            WeatherData weatherData = new WeatherData();
+            //WeatherData weatherData = new WeatherData();
+            //// Create observers
+            //CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay();
+            //StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+            //// Register observers
+            //weatherData.RegisterObserver(currentDisplay);
+            //weatherData.RegisterObserver(statisticsDisplay);
+            //// Simulate new weather measurements
+            //weatherData.SetMeasurements(80, 65, 30.4f);
+            //weatherData.SetMeasurements(82, 70, 29.2f);
+            //weatherData.SetMeasurements(78, 90, 29.2f);
 
-            // Create observers
-            CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay();
-            StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+            //9 - Strategy pattern
+            //Console.WriteLine("Choose payment method (credit/paypal/bitcoin): ");
+            //string paymentMethod = Console.ReadLine().Trim().ToLower();
 
-            // Register observers
-            weatherData.RegisterObserver(currentDisplay);
-            weatherData.RegisterObserver(statisticsDisplay);
+            //IPaymentStrategy strategy = null;
 
-            // Simulate new weather measurements
-            weatherData.SetMeasurements(80, 65, 30.4f);
-            weatherData.SetMeasurements(82, 70, 29.2f);
-            weatherData.SetMeasurements(78, 90, 29.2f);
+            //switch (paymentMethod)
+            //{
+            //    case "credit":
+            //        strategy = new CreditCardPayment();
+            //        break;
+            //    case "paypal":
+            //        strategy = new PayPalPayment();
+            //        break;
+            //    case "bitcoin":
+            //        strategy = new BitcoinPayment();
+            //        break;
+            //    default:
+            //        Console.WriteLine("Invalid payment method");
+            //        return;
+            //}
+
+            //Behavioral_Patterns._9_Strategy.ShoppingCart cart = new Behavioral_Patterns._9_Strategy.ShoppingCart(strategy);
+            //cart.Checkout(100.0); // Example amount to pay
+
+
+            //10 Template_Method Pattern 
+
+            Game game = new Football();
+            game.Play();
+
+            Console.WriteLine();
+
+            game = new Cricket();
+            game.Play();
         }
     }
 }

@@ -8,8 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Behavioral_Patterns\9_Strategy\" />
-    <Folder Include="Behavioral_Patterns\10_Template_Method\" />
     <Folder Include="Behavioral_Patterns\11_Visitor\" />
     <Folder Include="Creational_Patterns\1_Abstract_Factory\" />
     <Folder Include="Creational_Patterns\2_Builder\" />
