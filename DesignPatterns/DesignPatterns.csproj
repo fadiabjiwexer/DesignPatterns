@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Creational_Patterns\1_Abstract_Factory\" />
     <Folder Include="Creational_Patterns\2_Builder\" />
     <Folder Include="Creational_Patterns\3_Factory_method\" />
     <Folder Include="Creational_Patterns\5_Singleton\" />

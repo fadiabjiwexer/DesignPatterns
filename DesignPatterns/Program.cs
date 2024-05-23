@@ -15,6 +15,9 @@ using DesignPatterns.Behavioral_Patterns._7_Observer.Implementations;
 using DesignPatterns.Behavioral_Patterns._7_Observer.Interfaces;
 using DesignPatterns.Behavioral_Patterns._9_Strategy;
 using DesignPatterns.Behavioral_Patterns.State.Wrong;
+using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Client;
+using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Implementations.Abstract_Factory;
+using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Interfaces.Abstract_Factory;
 using System.Linq.Expressions;
 
 namespace DesignPatterns
@@ -189,19 +192,31 @@ namespace DesignPatterns
 
             //11- Visitor Pattern
             // Create some shapes
-            Circle circle = new Circle(5);
-            Rectangle rectangle = new Rectangle(3, 4);
+            //Circle circle = new Circle(5);
+            //Rectangle rectangle = new Rectangle(3, 4);
 
-            // Create visitors
-            AreaVisitor areaVisitor = new AreaVisitor();
-            DrawVisitor drawVisitor = new DrawVisitor();
+            //// Create visitors
+            //AreaVisitor areaVisitor = new AreaVisitor();
+            //DrawVisitor drawVisitor = new DrawVisitor();
 
-            // Use visitors
-            circle.Accept(areaVisitor);
-            circle.Accept(drawVisitor);
+            //// Use visitors
+            //circle.Accept(areaVisitor);
+            //circle.Accept(drawVisitor);
 
-            rectangle.Accept(areaVisitor);
-            rectangle.Accept(drawVisitor);
+            //rectangle.Accept(areaVisitor);
+            //rectangle.Accept(drawVisitor);
+
+            // Creational_Patterns
+            //1_ Abstract Factory
+            // Use Windows Factory
+                IGUIFactory windowsFactory = new WindowsFactory();
+                Application windowsApp = new Application(windowsFactory);
+                windowsApp.Run();
+
+                // Use MacOS Factory
+                IGUIFactory macFactory = new MacOSFactory();
+                Application macApp = new Application(macFactory);
+                macApp.Run();
         }
     }
 }
