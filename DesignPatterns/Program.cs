@@ -18,6 +18,8 @@ using DesignPatterns.Behavioral_Patterns.State.Wrong;
 using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Client;
 using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Implementations.Abstract_Factory;
 using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Interfaces.Abstract_Factory;
+using DesignPatterns.Creational_Patterns._2_Builder.Implementations;
+using DesignPatterns.Creational_Patterns._2_Builder.Models;
 using System.Linq.Expressions;
 
 namespace DesignPatterns
@@ -209,14 +211,29 @@ namespace DesignPatterns
             // Creational_Patterns
             //1_ Abstract Factory
             // Use Windows Factory
-                IGUIFactory windowsFactory = new WindowsFactory();
-                Application windowsApp = new Application(windowsFactory);
-                windowsApp.Run();
+            //IGUIFactory windowsFactory = new WindowsFactory();
+            //Application windowsApp = new Application(windowsFactory);
+            //windowsApp.Run();
 
-                // Use MacOS Factory
-                IGUIFactory macFactory = new MacOSFactory();
-                Application macApp = new Application(macFactory);
-                macApp.Run();
+            //// Use MacOS Factory
+            //IGUIFactory macFactory = new MacOSFactory();
+            //Application macApp = new Application(macFactory);
+            //macApp.Run();
+
+            //2_ Builder Pattern
+            // Create a pizza maker with a specific builder
+                var hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
+                var pizzaMaker = new PizzaMaker(hawaiianPizzaBuilder);
+
+                // Make the pizza
+                pizzaMaker.MakePizza();
+
+                // Get the pizza from the builder
+                Pizza pizza = hawaiianPizzaBuilder.GetPizza();
+
+                // Display the pizza details
+                Console.WriteLine("Hawaiian Pizza:");
+                pizza.Display();
         }
     }
 }
