@@ -20,6 +20,7 @@ using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Implementations.Abs
 using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Interfaces.Abstract_Factory;
 using DesignPatterns.Creational_Patterns._2_Builder.Implementations;
 using DesignPatterns.Creational_Patterns._2_Builder.Models;
+using DesignPatterns.Creational_Patterns._4_Prototype;
 using System.Linq.Expressions;
 
 namespace DesignPatterns
@@ -51,7 +52,7 @@ namespace DesignPatterns
             //canvas.SetCurrentTool(new SelectionTool());
             //canvas.mouseDown();
             //canvas.mouseUp();
-            //State Pattern wrong using
+            ////State Pattern wrong using
             //StopWatch stopwatch = new StopWatch();
             //stopwatch.Click();
             //stopwatch.Click();
@@ -222,18 +223,37 @@ namespace DesignPatterns
 
             //2_ Builder Pattern
             // Create a pizza maker with a specific builder
-                var hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
-                var pizzaMaker = new PizzaMaker(hawaiianPizzaBuilder);
+            //var hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
+            //    var pizzaMaker = new PizzaMaker(hawaiianPizzaBuilder);
 
-                // Make the pizza
-                pizzaMaker.MakePizza();
+            //    // Make the pizza
+            //    pizzaMaker.MakePizza();
 
-                // Get the pizza from the builder
-                Pizza pizza = hawaiianPizzaBuilder.GetPizza();
+            //    // Get the pizza from the builder
+            //    Pizza pizza = hawaiianPizzaBuilder.GetPizza();
 
-                // Display the pizza details
-                Console.WriteLine("Hawaiian Pizza:");
-                pizza.Display();
+            //    // Display the pizza details
+            //    Console.WriteLine("Hawaiian Pizza:");
+            //    pizza.Display();
+
+            //4- Prototype
+                // Create an original person object
+                Person originalPerson = new Person("John Doe", 30);
+
+                // Clone the original person to create a new person
+                Person clonedPerson = originalPerson.Clone();
+
+                // Display the details of both persons
+                Console.WriteLine("Original Person: " + originalPerson);
+                Console.WriteLine("Cloned Person: " + clonedPerson);
+
+                // Change the name of the cloned person
+                clonedPerson.Name = "Jane Doe";
+
+                // Display the details again to show that they are now different
+                Console.WriteLine("\nAfter changing the cloned person's name:");
+                Console.WriteLine("Original Person: " + originalPerson);
+                Console.WriteLine("Cloned Person: " + clonedPerson);
         }
     }
 }
