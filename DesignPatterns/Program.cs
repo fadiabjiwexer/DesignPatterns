@@ -21,6 +21,7 @@ using DesignPatterns.Creational_Patterns._1_Abstract_Factory.Interfaces.Abstract
 using DesignPatterns.Creational_Patterns._2_Builder.Implementations;
 using DesignPatterns.Creational_Patterns._2_Builder.Models;
 using DesignPatterns.Creational_Patterns._4_Prototype;
+using DesignPatterns.Creational_Patterns._5_Singleton;
 using System.Linq.Expressions;
 
 namespace DesignPatterns
@@ -237,23 +238,44 @@ namespace DesignPatterns
             //    pizza.Display();
 
             //4- Prototype
-                // Create an original person object
-                Person originalPerson = new Person("John Doe", 30);
+            // Create an original person object
+            //Person originalPerson = new Person("John Doe", 30);
 
-                // Clone the original person to create a new person
-                Person clonedPerson = originalPerson.Clone();
+            //// Clone the original person to create a new person
+            //Person clonedPerson = originalPerson.Clone();
 
-                // Display the details of both persons
-                Console.WriteLine("Original Person: " + originalPerson);
-                Console.WriteLine("Cloned Person: " + clonedPerson);
+            //// Display the details of both persons
+            //Console.WriteLine("Original Person: " + originalPerson);
+            //Console.WriteLine("Cloned Person: " + clonedPerson);
 
-                // Change the name of the cloned person
-                clonedPerson.Name = "Jane Doe";
+            //// Change the name of the cloned person
+            //clonedPerson.Name = "Jane Doe";
 
-                // Display the details again to show that they are now different
-                Console.WriteLine("\nAfter changing the cloned person's name:");
-                Console.WriteLine("Original Person: " + originalPerson);
-                Console.WriteLine("Cloned Person: " + clonedPerson);
+            //// Display the details again to show that they are now different
+            //Console.WriteLine("\nAfter changing the cloned person's name:");
+            //Console.WriteLine("Original Person: " + originalPerson);
+            //Console.WriteLine("Cloned Person: " + clonedPerson);
+
+
+            //5- Singelton Designe pattern 
+            // Access the single instance of the Logger.
+            Logger logger1 = Logger.Instance;
+            Logger logger2 = Logger.Instance;
+
+            // Log messages using the logger.
+            logger1.Log("First message");
+            logger2.Log("Second message");
+
+            // Check if both logger instances are the same.
+            //Since logger1 and logger2 are references to the same singleton instance, the comparison will be true.
+            if (logger1 == logger2)
+            {
+                Console.WriteLine("Both loggers are the same instance.");
+            }
+            else
+            {
+                Console.WriteLine("Loggers are different instances.");
+            }
         }
     }
 }
