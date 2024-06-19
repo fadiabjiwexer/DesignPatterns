@@ -22,7 +22,14 @@ using DesignPatterns.Creational_Patterns._2_Builder.Implementations;
 using DesignPatterns.Creational_Patterns._2_Builder.Models;
 using DesignPatterns.Creational_Patterns._4_Prototype;
 using DesignPatterns.Creational_Patterns._5_Singleton;
+using DesignPatterns.Structural_Patterns._1_Adapter.Client;
+using DesignPatterns.Structural_Patterns._1_Adapter.Implementations;
+using System.Drawing;
+using System.IO;
 using System.Linq.Expressions;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text;
+using DesignPatterns.Structural_Patterns._2_Bridge.Implementor;
 
 namespace DesignPatterns
 {
@@ -259,23 +266,59 @@ namespace DesignPatterns
 
             //5- Singelton Designe pattern 
             // Access the single instance of the Logger.
-            Logger logger1 = Logger.Instance;
-            Logger logger2 = Logger.Instance;
+            //Logger logger1 = Logger.Instance;
+            //Logger logger2 = Logger.Instance;
 
-            // Log messages using the logger.
-            logger1.Log("First message");
-            logger2.Log("Second message");
+            //// Log messages using the logger.
+            //logger1.Log("First message");
+            //logger2.Log("Second message");
 
-            // Check if both logger instances are the same.
-            //Since logger1 and logger2 are references to the same singleton instance, the comparison will be true.
-            if (logger1 == logger2)
-            {
-                Console.WriteLine("Both loggers are the same instance.");
-            }
-            else
-            {
-                Console.WriteLine("Loggers are different instances.");
-            }
+            //// Check if both logger instances are the same.
+            ////Since logger1 and logger2 are references to the same singleton instance, the comparison will be true.
+            //if (logger1 == logger2)
+            //{
+            //    Console.WriteLine("Both loggers are the same instance.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Loggers are different instances.");
+            //}
+
+
+            //Structural_Patterns
+            //The Problem:
+            // Imagine that you’re creating a stock market monitoring app.
+            // The app downloads the stock data from multiple sources in XML format and then displays nice
+            // looking charts and diagrams for the user.
+            // At some point, you decide to improve the app by integrating a smart 3rd
+            // party analytics library.But there’s a catch: the analytics library only works with data in JSON format.
+
+            //steps:
+            //Define the Target Interface.
+            //Implement the Adaptee.
+            //Create the Adapter.
+            //Implement the Client.
+
+            //// 1_Adapter
+            //// Adaptee
+            //XmlStockData xmlStockData = new XmlStockData();
+
+            //// Adapter
+            //StockDataAdapter adapter = new StockDataAdapter(xmlStockData);
+
+            //// Client
+            //StockMarketApp app = new StockMarketApp(adapter);
+
+            //// Display stock data
+            //app.DisplayStockData();
+
+
+            // 2_Bridge Designe pattern
+            Shape redCircle = new Structural_Patterns._2_Bridge.Implementor.Circle(new RedColor());
+            Shape blueSquare = new Square(new BlueColor());
+
+            redCircle.Draw();
+            blueSquare.Draw();
         }
     }
 }
