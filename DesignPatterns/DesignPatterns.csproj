@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Creational_Patterns\3_Factory_method\" />
     <Folder Include="Creational_Patterns\5_Singleton\NewFolder\" />
-    <Folder Include="Structural_Patterns\3_Composite\" />
     <Folder Include="Structural_Patterns\4_Decorator\" />
     <Folder Include="Structural_Patterns\5_Facade\" />
     <Folder Include="Structural_Patterns\6_Flyweight\" />
